@@ -104,7 +104,7 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
      ;; Packages I don't use (non-exhaustive)
      anzu centered-cursor-mode column-enforce-mode company-statistics
      doom-modeline eshell-prompt-extras evil-anzu evil-mc evil-tutor
-     fancy-battery fill-column-indicator gnuplot golden-ratio indent-guide
+     fancy-battery fill-column-indicator gnuplot golden-ratio
      live-py-mode multi-term multiple-cursors mwim neotree paradox py-isort
      yapfify)))
 
