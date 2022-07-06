@@ -37,6 +37,7 @@
    clojure
    emacs-lisp
    haskell
+   ruby-on-rails
    hy  ; I wrote this mode/layer
 
    (c-c++ :variables
