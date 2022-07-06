@@ -88,7 +88,10 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
 (defun dotspacemacs/layers ()
   "Instantiate Spacemacs layers declarations and package configurations."
   (setq-default
-   dotspacemacs-configuration-layers     '((config   :location local)
+   dotspacemacs-configuration-layers     '(sql
+                                           elixir
+                                           ruby
+                                           (config   :location local)
                                            (display  :location local)
                                            (personal :location local))
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
