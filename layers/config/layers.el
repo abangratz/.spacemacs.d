@@ -7,7 +7,8 @@
                     auto-completion-tab-key-behavior 'complete
                     auto-completion-enable-snippets-in-popup t)
    better-defaults
-   git
+   (git :variables
+        git-enable-magit-gitflow-plugin t)
    (ivy :variables
         ivy-extra-directories nil)
    (org :variables
