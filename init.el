@@ -81,7 +81,9 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
    dotspacemacs-emacs-leader-key  "M-m"
    dotspacemacs-emacs-command-key "SPC"
    dotspacemacs-leader-key        "SPC"
-   dotspacemacs-mode-line-theme   'all-the-icons))
+   dotspacemacs-mode-line-theme   'all-the-icons
+   dotspacemacs-install-packages  'used-but-keep-unused
+   ))
 
 ;;;; Spacemacs/layers
 
