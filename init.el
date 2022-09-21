@@ -66,7 +66,7 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
    dotspacemacs-elpa-https                 nil
    dotspacemacs-elpa-subdirectory          nil
    dotspacemacs-enable-server              server?
-   dotspacemacs-fullscreen-at-startup      t
+   dotspacemacs-fullscreen-at-startup      nil
    dotspacemacs-folding-method             'origami
    dotspacemacs-large-file-size            5
    dotspacemacs-persistent-server          server?
@@ -123,12 +123,7 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
   (when (and (boundp 'redo-bindings?) redo-bindings?
              (configuration-layer/package-used-p 'redo-spacemacs))
     (redo-spacemacs-bindings))
-
-  ;; While toggling with `toggle-frame-fullscreen' works, I could not get
-  ;; it to work as a hook attached to the frame-make or window-setup.
-  ;; Depending on your OS, you may need a different/not-at-all need this.
-  (when (and mac? server?)
-    (add-to-list 'default-frame-alist '(fullscreen . fullboth))))
+  )
 
 ;;;;; Core
 
