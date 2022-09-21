@@ -25,6 +25,7 @@
    ranger
    (ibuffer :variables
             ibuffer-group-buffers-by 'projects)
+   xkcd
 
    ;; Markups
    csv
@@ -33,11 +34,20 @@
    yaml
 
    ;; Languages
-   lsp
+   ( lsp :variables
+     lsp-lens-enable t
+     lsp-elixir-suggest-specs t
+     lsp-elixir-fetch-deps nil
+     lsp-elixir-mix-env "dev"
+     lsp-solargraph-use-bundler t)
    clojure
+   (elixir :variables elixir-backend 'lsp elixir-ls-path "/home/anton/.emacs.d/.cache/lsp/elixir-ls")
+   ;; elixir
    emacs-lisp
    haskell
+   ruby
    ruby-on-rails
+   sql
    hy  ; I wrote this mode/layer
 
    (c-c++ :variables
