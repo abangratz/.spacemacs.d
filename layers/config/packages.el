@@ -128,6 +128,8 @@
 
 (defun config/pre-init-org ()
   (setq org-ellipsis "")
+  (setq org-todo-keywords
+        '((sequence "TODO" "DOING" "BLOCKED" "REVIEW" "|" "DONE" "ARCHIVED")))
   (setq org-priority-faces
         '((65 :inherit org-priority :foreground "red")
           (66 :inherit org-priority :foreground "brown")
