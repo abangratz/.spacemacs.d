@@ -14,7 +14,7 @@
    (org :variables
         org-want-todo-bindings t)
    (shell :variables
-          shell-default-shell 'eshell)
+          shell-default-shell 'vterm)
    syntax-checking
    (version-control :variables
                     version-control-global-margin t
@@ -53,10 +53,10 @@
    hy  ; I wrote this mode/layer
 
    (c-c++ :variables
-          ;; c-c++-backend 'lsp-ccls
-          c-c++-backend 'lsp-cquery
-          c-c++-enable-google-style t
-          c-c++-enable-google-newline t)
+         ;; c-c++-backend 'lsp-ccls
+         c-c++-backend 'lsp-cquery
+         c-c++-enable-google-style t
+         c-c++-enable-google-newline t)
 
    (python :variables
 
