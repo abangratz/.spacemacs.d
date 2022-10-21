@@ -7,7 +7,7 @@
         eshell
         evil
         ivy
-        lsp-mode
+        ;; lsp-mode
         magit
         ob org org-bullets
         ranger
@@ -82,25 +82,6 @@
              ("C-SPC"      . ivy-dispatching-done)
              ("C-S-SPC"    . ivy-dispatching-call)))
 
-;;;; Lsp-mode
-
-;; (defun config/pre-init-lsp-mode ()
-;;   (use-package lsp-mode
-;;     :commands lsp
-;;     :ensure t
-;;     :diminish lsp-mode
-;;     :hook
-;;     (elixir-mode . lsp)
-;;     :init
-;;     (add-to-list 'exec-path "/home/anton/.emacs.d/.cache/lsp/elixir-ls")
-;;     :config
-;;     (setq lsp-headerline-enable nil
-;;           lsp-headerline-breadcrumb-enable nil ;; disable headerline breadcrumbs
-;;           lsp-lens-enable t
-;;           lsp-elixir-suggest-specs t
-;;           lsp-elixir-fetch-deps nil
-;;           lsp-elixir-mix-env "dev"
-;;           lsp-solargraph-use-bundler)))
 
 ;;;; Magit
 

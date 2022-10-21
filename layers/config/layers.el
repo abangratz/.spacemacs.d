@@ -29,7 +29,10 @@
 
    ;; Markups
    csv
-   html
+   (html :variables
+         web-fmt-tool 'web-beautify
+         html-enable-leex-support t
+         html-enable-lsp t)
    markdown
    yaml
 
@@ -42,7 +45,6 @@
      lsp-solargraph-use-bundler t)
    clojure
    (elixir :variables elixir-backend 'lsp elixir-ls-path "/home/anton/.emacs.d/.cache/lsp/elixir-ls")
-   ;; elixir
    emacs-lisp
    haskell
    ruby
