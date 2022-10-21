@@ -133,4 +133,6 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
   (dotspacemacs/user-config/post-layer-load-config)
   (defalias 'forward-evil-word 'forward-evil-symbol)
   ;; Drop-in whatever config here, experiment!
+  ;; Prevent undo tree files from polluting your git repo
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   )
