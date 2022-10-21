@@ -19,18 +19,19 @@
 
 ;;;; Constants
 
-(defconst eric?    (string= "Eric Kaschalk" (user-full-name)) "Am I me?")
+(defconst eric?    (string= "Eric Kaschalk" (user-full-name)) "Am I Eric?")
+(defconst tony?    (string= "Anton Bangratz" (user-full-name)) "Am I me?")
 (defconst linux?   (eq system-type 'gnu/linux) "Are we on a linux machine?")
 (defconst mac?     (eq system-type 'darwin)    "Are we on a macOS machine?")
 (defconst windows? (not (or linux? mac?))      "Are we on windows machine?")
 
 ;;;; Configuration
 
-(defvar server? (if eric? t nil)
-  "Alias `dotspacemacs-enable-server'. Defaults to nil for non-eric users.")
+(defvar server? (if tony? t nil)
+  "Alias `dotspacemacs-enable-server'. Defaults to nil for non-tony users.")
 
 (defvar redo-bindings? (if eric? t nil)
-  "Redo spacemacs bindings? Defaults to, and I recommend, nil to non-eric users.
+  "Redo spacemacs bindings? Defaults to, and I recommend, nil to non-tony users.
 
 See the commentary in the config layer's local pkg `redo-spacemacs'.")
 
