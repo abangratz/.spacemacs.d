@@ -46,16 +46,16 @@ All `dotspacemacs-' variables with values set different than their defaults.
 They are all defined in `~/.emacs.d/core/core-dotspacemacs.el'.
 Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
   (setq-default
-   ;; Display
-   ;; dotspacemacs-default-font `(,(if (x-list-fonts "Operator Mono")
-   ;;                                  "operator mono medium"
-   ;;                                "Source Code Pro")
-   ;;                             :size ,(if (>= 1440 (display-pixel-height)) 24 18))
-   dotspacemacs-default-font '("Fira Code"
-                               :size 32
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+   dotspacemacs-default-font '(("Fira Code"
+                                :size 32
+                                :weight normal
+                                :width normal
+                                :powerline-scale 1.1)
+                               ("Fira Code Symbol"
+                                :size 32
+                                :weight normal
+                                :width normal
+                                :powerline-scale 1.1))
    dotspacemacs-themes       '(solarized-dark
                                zenburn)
 
