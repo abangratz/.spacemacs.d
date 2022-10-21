@@ -15,7 +15,7 @@
         which-key
 
         ;; Personal display-related packages
-        ;; (pretty-code     :location local)
+        (pretty-code     :location local)
         (pretty-eshell   :location local)
         (pretty-fonts    :location local)
         (pretty-magit    :location local)
@@ -114,27 +114,28 @@
   ;; !! If you remove this - expect EXTREMELY degraded performance
   ;; !! on files of more-or-less any size and of any type
   ;; !!!!!!!!!!!!!!!!
-  (spaceline-toggle-projectile-root-off)
-  (spaceline-toggle-all-the-icons-projectile-off)
-  (spaceline-toggle-all-the-icons-buffer-id-off)
+  ;; (spaceline-toggle-projectile-root-off)
+  ;; (spaceline-toggle-all-the-icons-projectile-off)
+  ;; (spaceline-toggle-all-the-icons-buffer-id-off)
 
 
   ;; Mode Segments
-  (spaceline-toggle-all-the-icons-minor-modes-off)
+  ;; (spaceline-toggle-all-the-icons-minor-modes-off)
 
   ;; Buffer Segments
-  (spaceline-toggle-all-the-icons-buffer-size-off)
-  (spaceline-toggle-all-the-icons-buffer-position-off)
+  ;; (spaceline-toggle-all-the-icons-buffer-size-off)
+  ;; (spaceline-toggle-all-the-icons-buffer-position-off)
 
   ;; Git Segments
-  (spaceline-toggle-all-the-icons-git-status-off)
-  (spaceline-toggle-all-the-icons-vc-icon-off)
-  (spaceline-toggle-all-the-icons-vc-status-off)
+  ;; (spaceline-toggle-all-the-icons-git-status-off)
+  ;; (spaceline-toggle-all-the-icons-vc-icon-off)
+  ;; (spaceline-toggle-all-the-icons-vc-status-off)
 
   ;; Misc Segments
-  (spaceline-toggle-all-the-icons-eyebrowse-workspace-off)
-  (spaceline-toggle-all-the-icons-flycheck-status-off)
-  (spaceline-toggle-all-the-icons-time-off))
+  ;; (spaceline-toggle-all-the-icons-eyebrowse-workspace-off)
+  ;; (spaceline-toggle-all-the-icons-flycheck-status-off)
+  ;; (spaceline-toggle-all-the-icons-time-off)
+  )
 
 ;;; Pretty Packages
 ;;;; Pretty-code
@@ -146,6 +147,7 @@
       (pretty-code-add-hook 'emacs-lisp-mode-hook '((:def "defun")))
       (pretty-code-add-hook 'hy-mode-hook         '((:def "defn")
                                                     (:lambda "fn")))
+      (pretty-code-add-hook 'elixir-mode-hook '((:lambda "fn")))
       (pretty-code-add-hook 'python-mode-hook     '((:def "def")
                                                     (:lambda "lambda"))))))
 
@@ -208,8 +210,8 @@
     :config
     ;; !! This is required to avoid segfault when using emacs as daemon !!
     (spacemacs|do-after-display-system-init
-     ;; (pretty-fonts-add-hook 'prog-mode-hook pretty-fonts-fira-code-alist)
-     ;; (pretty-fonts-add-hook 'org-mode-hook  pretty-fonts-fira-code-alist)
+     (pretty-fonts-add-hook 'prog-mode-hook pretty-fonts-fira-code-alist)
+     (pretty-fonts-add-hook 'org-mode-hook  pretty-fonts-fira-code-alist)
 
      ;; (pretty-fonts-set-fontsets-for-fira-code)
      (pretty-fonts-set-fontsets

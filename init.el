@@ -96,7 +96,7 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
                                            (display  :location local)
                                            (personal :location local))
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
-   dotspacemacs-additional-packages      '(buttercup)
+   dotspacemacs-additional-packages      '(buttercup fira-code-mode)
    dotspacemacs-frozen-packages          '()
    dotspacemacs-excluded-packages
    '(;; Must Exclude (for styling, functionality, bug-fixing reasons)
