@@ -11,7 +11,6 @@
         magit
         ob org org-bullets
         ranger
-
         ;; Owned Packages
         auto-dim-other-buffers
         dash-functional
@@ -491,3 +490,4 @@
               ;; spacemacs/kill-this-buffer
               ;; M-u, M-i
               )))))
+;;;

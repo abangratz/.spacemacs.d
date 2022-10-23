@@ -96,11 +96,11 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
                                            (display  :location local)
                                            (personal :location local))
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
-   dotspacemacs-additional-packages      '(buttercup fira-code-mode)
+   dotspacemacs-additional-packages      '(buttercup fira-code-mode polymode)
    dotspacemacs-frozen-packages          '()
    dotspacemacs-excluded-packages
    '(;; Must Exclude (for styling, functionality, bug-fixing reasons)
-     fringe importmagic scss-mode vi-tilde-fringe
+     fringe importmagic vi-tilde-fringe
 
      ;; Packages I don't use (non-exhaustive)
      anzu centered-cursor-mode column-enforce-mode company-statistics
@@ -135,4 +135,34 @@ Check `dotspacemacs/get-variable-string-list' for all vars you can configure."
   ;; Drop-in whatever config here, experiment!
   ;; Prevent undo tree files from polluting your git repo
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+  (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
+  (define-innermode poly-surface-expr-elixir-innermode
+    :mode 'web-mode
+    :head-matcher (rx line-start (* space) "~H" (= 3 (char "\"'")) line-end)
+    :tail-matcher (rx line-start (* space) (= 3 (char "\"'")) line-end)
+    :head-mode 'host
+    :tail-mode 'host
+    :allow-nested nil
+    :keep-in-mode 'host
+    :fallback-mode 'host)
+  (define-polymode poly-elixir-web-mode
+    :hostmode 'poly-elixir-hostmode
+    :innermodes '(poly-surface-expr-elixir-innermode))
+  (setq web-mode-engines-alist
+        '(("elixir" . "\\.heex\\'") ("elixir" . "\\.ex\\'")))
+  (add-to-list 'auto-mode-alist '("\\.ex" . poly-elixir-web-mode))
+  (add-to-list 'auto-mode-alist '("\\.heex" . web-mode))
+  (setq web-mode-enable-auto-closing t)
+  (setq web-mode-enable-auto-pairing t)
+  ;; Set Elixir LSP hooks (in this case, format on save).
+  (add-hook 'elixir-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook #'lsp-format-buffer nil t)))
+
+  ;; Disable Dialyzer in `elixir-ls`.
+  (defvar lsp-elixir--config-options (make-hash-table))
+  (puthash "dialyzerEnabled" :json-false lsp-elixir--config-options)
+  (add-hook 'lsp-after-initialize-hook
+            (lambda ()
+              (lsp--set-configuration `(:elixirLS, lsp-elixir--config-options))))
   )

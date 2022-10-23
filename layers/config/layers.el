@@ -32,7 +32,9 @@
    (html :variables
          web-fmt-tool 'web-beautify
          html-enable-leex-support t
-         html-enable-lsp t)
+         html-enable-lsp t
+         scss-enable-lsp t
+         css-enable-lsp t)
    markdown
    yaml
 
@@ -44,7 +46,7 @@
      lsp-elixir-mix-env "dev"
      lsp-solargraph-use-bundler t)
    clojure
-   (elixir :variables elixir-backend 'lsp elixir-ls-path "/home/anton/.emacs.d/.cache/lsp/elixir-ls")
+   (elixir :variables elixir-backend 'lsp elixir-ls-path "/home/anton/elixir/elixir-ls")
    emacs-lisp
    haskell
    ruby
