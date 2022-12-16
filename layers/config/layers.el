@@ -51,14 +51,15 @@
    haskell
    ruby
    ruby-on-rails
-   sql
+   (sql :variables sql-capitalize-keywords t)
    hy  ; I wrote this mode/layer
 
+
    (c-c++ :variables
-         ;; c-c++-backend 'lsp-ccls
-         c-c++-backend 'lsp-cquery
-         c-c++-enable-google-style t
-         c-c++-enable-google-newline t)
+          ;; c-c++-backend 'lsp-ccls
+          c-c++-backend 'lsp-cquery
+          c-c++-enable-google-style t
+          c-c++-enable-google-newline t)
 
    (python :variables
 

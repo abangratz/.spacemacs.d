@@ -122,7 +122,7 @@
           ("s" "#+BEGIN_SRC ?\n\n#+END_SRC")
           ("se" "#+BEGIN_SRC emacs-lisp\n\n#+END_SRC")
           ("sp" "#+BEGIN_SRC python\n\n#+END_SRC")))
-  (setq org-agenda-files '("~/todo.org" "~/tasks.org"))
+  (setq org-agenda-files '("~/todo.org" "~/tasks.org" "~/org/notes.org" "~/org/todo.org"))
 
   (add-hook 'org-mode-hook (lambda () (auto-fill-mode 1)))
   (add-hook 'org-mode-hook 'flyspell-mode)
